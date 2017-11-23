@@ -1,5 +1,8 @@
 # trivagoTest
 
+# Tools
+Selenide + JUnit + Allure
+
 # To run tests and generate Allure report:
 
    * run mvn clean test
