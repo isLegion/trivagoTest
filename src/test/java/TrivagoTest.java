@@ -12,6 +12,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static com.codeborne.selenide.Selenide.clearBrowserLocalStorage;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 
@@ -25,7 +26,7 @@ public class TrivagoTest {
 
     @Before
     public void setUp(){
-        DateFormat simpleDayFormat = new SimpleDateFormat("dd");
+        DateFormat simpleDayFormat = new SimpleDateFormat("d");
         Date date = new Date();
         String day = simpleDayFormat.format(date);
         System.setProperty("selenide.browser", "Chrome");
@@ -76,6 +77,7 @@ public class TrivagoTest {
     public void tearDown() throws IOException {
         screenshot();
         clearBrowserCache();
+        clearBrowserLocalStorage();
     }
 
     @Attachment(type = "image/png")
